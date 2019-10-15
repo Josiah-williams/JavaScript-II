@@ -32,10 +32,10 @@ const counterMaker = () => {
 // myCounter(); // 1
 // myCounter(); // 2
 const newCounter = counterMaker();
-console.log(newCounterMaker());
-console.log(newCounterMaker());
-console.log(newCounterMaker());
-console.log(newCounterMaker());
+console.log(newCounter());
+console.log(newCounter());
+console.log(newCounter());
+console.log(newCounter());
   //      NOTE: This `counter` function, being nested inside `counterMaker`,
   //      "closes over" the `count` variable. It can "see" it in the parent scope!
   // 3- Return the `counter` function.

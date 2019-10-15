@@ -41,27 +41,73 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 
 function getLength(arr, cb) {
   // getLength passes the length of the array into the callback.
-cb(arr.getLength);
 }
+
+function getlength(arr, cb){
+  return cb(arr.length);
+}
+getlength(items, function(length){
+console.log(length)
+});
+
 function last(arr, cb) {
   // last passes the last item of the array into the callback.
-cb(arr.last);
+}
+
+function last(arr, cb){
+  return cb(arr, cb);
+}
+last(items,function(last){
+console.log(last);
+}); 
+
 
 function sumNums(x, y, cb) {
   // sumNums adds two numbers (x, y) and passes the result to the callback.
-cb(x +y);
-  
+cb(x +y);{
+ 
+function sumNums(x, y, cb){
+  return cb(x +y);
+}
+sumNums(items,function(addition){
+console.log(addition)
+});
+
+
 function multiplyNums(x, y, cb) {
   // multiplyNums multiplies two numbers and passes the result to the callback.
-cb(x * y)
+cb(x * y)}
  
+ function multiplyNums(x, y, cb) {
+   return cb(x * y);
+}
+
+multiplyNums(2, 5, function(multiplication){
+  console.log(multiplication)
+});
+
+
 function contains(item, list, cb) {
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
-  cb (list.includes (items)){
-    console.log(result)
- 
 }
+
+function contains(item, list, cb) {
+  if(list.includes(item)){
+  return cb(true);
+}
+else{
+  return cb(false)
+ }
+}
+
+function trueorFalse(bool) {
+  console.log(bool)
+}
+contains("pencil", items, trueorFalse);
+contains("apple", items, trueorFalse)
+ 
+ 
 
 
 /* STRETCH PROBLEM */
@@ -71,4 +117,4 @@ function removeDuplicates(array, cb) {
   // Pass the duplicate free array to the callback function.
   // Do not mutate the original array.
 cb(array)
-
+}

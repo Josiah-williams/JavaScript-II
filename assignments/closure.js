@@ -1,8 +1,17 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a closure of your own creation.
-// Keep it simple! Remember a closure is just a function
-// that manipulates variables defined in the outer scope.
-// The outer scope can be a parent function, or the top level of the script.
+// Keep it simple! 
+function greeting() {
+  let hello = "Nice to meet you";
+
+  function fullGreeting(first, last) {
+      return `${hello} ${first} ${last}!`;
+  }
+  return fullGreeting;
+}
+
+const sayHello = greeting();
+console.log(sayHello("Jess", "H"));
 
 
 /* STRETCH PROBLEMS, Do not attempt until you have completed all previous tasks for today's project files */
@@ -13,13 +22,25 @@ const counterMaker = () => {
   // IMPLEMENTATION OF counterMaker:
   // 1- Declare a `count` variable with a value of 0. We will be mutating it, so declare it using `let`!
   // 2- Declare a function `counter`. It should increment and return `count`.
-  //      NOTE: This `counter` function, being nested inside `counterMaker`,
-  //      "closes over" the `count` variable. It can "see" it in the parent scope!
-  // 3- Return the `counter` function.
+  let count = 0;
+    const plusOne = function() {
+        return ++count;
+    }
+    return plusOne;
 };
 // Example usage: const myCounter = counterMaker();
 // myCounter(); // 1
 // myCounter(); // 2
+const newCounter = counterMaker();
+console.log(newCounterMaker());
+console.log(newCounterMaker());
+console.log(newCounterMaker());
+console.log(newCounterMaker());
+  //      NOTE: This `counter` function, being nested inside `counterMaker`,
+  //      "closes over" the `count` variable. It can "see" it in the parent scope!
+  // 3- Return the `counter` function.
+
+
 
 // ==== Challenge 3: Make `counterMaker` more sophisticated ====
 // It should have a `limit` parameter. Any counters we make with `counterMaker`

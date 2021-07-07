@@ -55,32 +55,39 @@ const runners = [
   { id: 50, first_name: "Shell", last_name: "Baine", email: "sbaine1d@intel.com", shirt_size: "M", company_name: "Gabtype", donation: 171 },
 ];
 
-// ==== Challenge 1: Use .forEach() ====
+//==== Challenge 1: Use .forEach() ====
 // The event director needs both the first and last names of each runner for their running bibs. Combine both the first and last names and populate a new array called `fullNames`. This array will contain just strings.
-let fullNames = [runners];
-runners.forEach(runners => {
-  // console.log(runners);
-});
+let fullNames = [];
+console.log(fullNames);
+runners.forEach(function(items){ return fullNames.push(`${items.first_name} ${items.last_name}`)});
+console.log(fullNames)
+
+
 
 // ==== Challenge 2: Use .map() ====
 // The event director needs to have all the runners' first names in uppercase because the director BECAME DRUNK WITH POWER. Populate an array called `firstNamesAllCaps`. This array will contain just strings.
-let firstNamesAllCaps = [runners];
-function gg(person) {
-  return person.firstNamesAllCaps;
-  console.log(firstNamesAllCaps);
+let allcaps= [];
+
+for (let i = 0; i < runners.length; i++) {
+  allcaps.push(runners[i].first_name.toUpperCase())
 }
-const runnersNames =runners.map(gg);
-// const firstNamesAllCaps = runners.map((per) => per.runners);
+console.log(allcaps)
 
 // ==== Challenge 3: Use .filter() ====
 // The large shirts won't be available for the event due to an ordering issue. We need a filtered version of the runners array, containing only those runners with large sized shirts so they can choose a different size. This will be an array of objects.
-let runnersLargeSizeShirt = [];
-runners.filter(runners =>
-console.log(runnersLargeSizeShirt);
+let LargeSizeShirt = [];
+let largeSizeShirt = [];
+largeSizeShirt = runners.filter(function(value){
+  return value.shirt_size === "L"
+});
+console.log(LargeSizeShirt);
 
 // ==== Challenge 4: Use .reduce() ====
 // The donations need to be tallied up and reported for tax purposes. Add up all the donations and save the total into a ticketPriceTotal variable.
-let ticketPriceTotal = 0;
+let ticketPriceTotal = [];
+ticketPriceTotal = runners.reduce(function(ticketPriceTotal, item){
+return ticketPriceTotal + item.donation;
+},0);
 console.log(ticketPriceTotal);
 
 // ==== Challenge 5: Be Creative ====
